@@ -11,7 +11,7 @@ import (
 	"github.com/actiontech/sqle/sqle/pkg/params"
 	"github.com/actiontech/sqle/sqle/utils"
 	hclog "github.com/hashicorp/go-hclog"
-	
+
 	"github.com/percona/go-mysql/query"
 	"github.com/pkg/errors"
 	"vitess.io/vitess/go/vt/sqlparser"
@@ -218,12 +218,12 @@ func (p *DriverImpl) Audit(ctx context.Context, sqls []string) ([]*driverV2.Audi
 	results := make([]*driverV2.AuditResults, 0, len(sqls))
 	for i, sql := range sqls {
 		ruleResults := driverV2.NewAuditResults()
-		for j, rule := range p.Config.Rules {
+		for _, rule := range p.Config.Rules {
 			result, err := p.Ah.Audit(ctx, rule, sql, sqls[i+1:])
 			if err != nil {
 				return nil, err
 			}
-			ruleResults.Results[j] = result
+			ruleResults.Results = append(ruleResults.Results, result)
 		}
 		results = append(results, ruleResults)
 	}

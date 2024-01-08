@@ -14,7 +14,7 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 RUN yum install -y which
 
-COPY ./sqle.rpm /opt/sqle.rpm
+COPY ./sqle-ce-2.9999.x.qa.el7.x86_64.rpm /opt/sqle.rpm
 COPY ./docker-images/sqle/start.sh /opt/
 
 RUN rpm -ivh /opt/sqle.rpm --prefix=/opt/sqle
