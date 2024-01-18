@@ -1,0 +1,59 @@
+FROM centos:7
+
+RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \
+systemd-tmpfiles-setup.service ] || rm -f $i; done); \
+rm -f /lib/systemd/system/multi-user.target.wants/*;\
+rm -f /etc/systemd/system/*.wants/*;\
+rm -f /lib/systemd/system/local-fs.target.wants/*; \
+rm -f /lib/systemd/system/sockets.target.wants/*udev*; \
+rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
+rm -f /lib/systemd/system/basic.target.wants/*;\
+rm -f /lib/systemd/system/anaconda.target.wants/*;
+
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+RUN export http_proxy=http://127.0.0.1:7890
+RUN export https_proxy=http://127.0.0.1:7890
+
+RUN yum install -y wget make gcc which python3 bison g++ gcc-g++
+RUN wget --no-check-certificate -P /tmp https://ftp.gnu.org/gnu/glibc/glibc-2.25.tar.xz
+RUN wget --no-check-certificate -P /tmp https://ftp.gnu.org/gnu/glibc/glibc-2.29.tar.xz
+RUN wget -P /tmp http://ftp.gnu.org/gnu/gcc/gcc-11.2.0/gcc-11.2.0.tar.gz
+RUN wget -P /tmp http://ftp.gnu.org/pub/gnu/make/make-4.3.tar.gz
+
+RUN tar -xzf /tmp/make-4.3.tar.gz -C /opt
+RUN tar -xzf /tmp/gcc-11.2.0.tar.gz -C /opt
+RUN tar -xf /tmp/glibc-2.25.tar.xz -C /opt
+RUN tar -xf /tmp/glibc-2.29.tar.xz -C /opt
+
+RUN rm /tmp/glibc-2.25.tar.xz && rm /tmp/glibc-2.29.tar.xz && rm /tmp/make-4.3.tar.gz
+
+RUN cd /opt/make-4.3/ && ./configure --prefix=/usr && make check && make install
+RUN cd /opt/gcc-11.2.0 && mkdir build && cd build && ../configure -enable-checking=release -enable-languages=c,c++ -disable-multilib && make && make install
+RUN cd /opt/glibc-2.25/ && mkdir build && cd build && ../configure --prefix=/usr --disable-profile --enable-add-ons --with-headers=/usr/include --with-binutils=/usr/bin && make && make install
+RUN cd /opt/glibc-2.29/ && mkdir build && cd build && ../configure --prefix=/usr --disable-profile --enable-add-ons --with-headers=/usr/include --with-binutils=/usr/bin && make && make install
+
+COPY ./sqle-ce-2.9999.x.qa.el7.x86_64.rpm /opt/sqle.rpm
+COPY ./docker-images/sqle/start.sh /opt/
+
+RUN rpm -ivh /opt/sqle.rpm --prefix=/opt/sqle
+RUN rm -f /opt/sqle.rpm
+
+RUN mkdir -p /opt/sqle/plugins
+RUN chown actiontech-universe:actiontech /opt/sqle/plugins
+
+RUN chown actiontech-universe:actiontech /opt/start.sh
+RUN chmod +x /opt/start.sh
+
+ENV MYSQL_HOST ""
+ENV MYSQL_PORT 3306
+ENV MYSQL_USER  ""
+ENV MYSQL_PASSWORD ""
+ENV MYSQL_SCHEMA ""
+
+ENV DEBUG false
+ENV AUTO_MIGRATE_TABLE true
+
+USER actiontech-universe
+WORKDIR /opt
+CMD ["sh", "-c", "/opt/start.sh"]

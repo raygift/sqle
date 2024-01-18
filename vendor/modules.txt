@@ -339,8 +339,8 @@ github.com/go-playground/universal-translator
 # github.com/go-playground/validator/v10 v10.9.0
 ## explicit; go 1.13
 github.com/go-playground/validator/v10
-# github.com/go-sql-driver/mysql v1.6.0
-## explicit; go 1.10
+# github.com/go-sql-driver/mysql v1.7.1
+## explicit; go 1.13
 github.com/go-sql-driver/mysql
 # github.com/golang-jwt/jwt v3.2.2+incompatible
 ## explicit
@@ -363,6 +363,12 @@ github.com/golang/protobuf/ptypes/any
 github.com/golang/protobuf/ptypes/duration
 github.com/golang/protobuf/ptypes/empty
 github.com/golang/protobuf/ptypes/timestamp
+# github.com/golang/snappy v0.0.4
+## explicit
+# github.com/google/pprof v0.0.0-20211008130755-947d60d73cc0
+## explicit; go 1.14
+# github.com/google/uuid v1.3.0
+## explicit
 # github.com/hashicorp/go-hclog v0.14.1
 ## explicit; go 1.13
 github.com/hashicorp/go-hclog
@@ -407,6 +413,8 @@ github.com/jackc/pgx/v4/stdlib
 # github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99
 ## explicit
 github.com/jbenet/go-context/io
+# github.com/jhump/protoreflect v1.12.0
+## explicit; go 1.13
 # github.com/jinzhu/gorm v1.9.15
 ## explicit; go 1.12
 github.com/jinzhu/gorm
@@ -425,6 +433,19 @@ github.com/json-iterator/go
 # github.com/kevinburke/ssh_config v1.2.0
 ## explicit
 github.com/kevinburke/ssh_config
+# github.com/klauspost/compress v1.15.9
+## explicit; go 1.16
+github.com/klauspost/compress
+github.com/klauspost/compress/flate
+github.com/klauspost/compress/fse
+github.com/klauspost/compress/gzip
+github.com/klauspost/compress/huff0
+github.com/klauspost/compress/internal/cpuinfo
+github.com/klauspost/compress/internal/snapref
+github.com/klauspost/compress/s2
+github.com/klauspost/compress/snappy
+github.com/klauspost/compress/zstd
+github.com/klauspost/compress/zstd/internal/xxhash
 # github.com/labstack/echo/v4 v4.6.1
 ## explicit; go 1.15
 github.com/labstack/echo/v4
@@ -513,10 +534,20 @@ github.com/opentracing/opentracing-go/log
 # github.com/percona/go-mysql v0.0.0-20210427141028-73d29c6da78c
 ## explicit
 github.com/percona/go-mysql/query
-# github.com/pingcap/errors v0.11.5-0.20201126102027-b0a155152ca3
+# github.com/pierrec/lz4/v4 v4.1.15
+## explicit; go 1.14
+github.com/pierrec/lz4/v4
+github.com/pierrec/lz4/v4/internal/lz4block
+github.com/pierrec/lz4/v4/internal/lz4errors
+github.com/pierrec/lz4/v4/internal/lz4stream
+github.com/pierrec/lz4/v4/internal/xxh32
+# github.com/pingcap/errors v0.11.5-0.20210425183316-da1aaba5fb63
 ## explicit; go 1.14
 github.com/pingcap/errors
-# github.com/pingcap/log v0.0.0-20210317133921-96f4fcab92a4 => github.com/pingcap/log v0.0.0-20191012051959-b742a5d432e9
+# github.com/pingcap/failpoint v0.0.0-20220801062533-2eaa32854a6c
+## explicit; go 1.13
+github.com/pingcap/failpoint
+# github.com/pingcap/log v1.1.0 => github.com/pingcap/log v0.0.0-20191012051959-b742a5d432e9
 ## explicit; go 1.13
 github.com/pingcap/log
 # github.com/pingcap/parser v3.0.12+incompatible => github.com/sjjian/parser v0.0.0-20231122073510-03e191068cf1
@@ -547,6 +578,21 @@ github.com/pingcap/tidb/util/math
 github.com/pingcap/tidb/util/memory
 github.com/pingcap/tidb/util/parser
 github.com/pingcap/tidb/util/stringutil
+# github.com/pingcap/tidb/parser v0.0.0-20230724161633-7c2dbbe34e46 => github.com/raygift/tidb/parser v0.0.0-20231229011222-595725f75a7b
+## explicit; go 1.18
+github.com/pingcap/tidb/parser
+github.com/pingcap/tidb/parser/ast
+github.com/pingcap/tidb/parser/auth
+github.com/pingcap/tidb/parser/charset
+github.com/pingcap/tidb/parser/duration
+github.com/pingcap/tidb/parser/format
+github.com/pingcap/tidb/parser/model
+github.com/pingcap/tidb/parser/mysql
+github.com/pingcap/tidb/parser/opcode
+github.com/pingcap/tidb/parser/terror
+github.com/pingcap/tidb/parser/test_driver
+github.com/pingcap/tidb/parser/tidb
+github.com/pingcap/tidb/parser/types
 # github.com/pingcap/tipb v0.0.0-20200522051215-f31a15d98fce
 ## explicit
 github.com/pingcap/tipb/go-tipb
@@ -562,7 +608,7 @@ github.com/pkg/errors
 # github.com/pmezard/go-difflib v1.0.0
 ## explicit
 github.com/pmezard/go-difflib/difflib
-# github.com/remyoudompheng/bigfft v0.0.0-20190728182440-6a916e37a237
+# github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec
 ## explicit; go 1.12
 github.com/remyoudompheng/bigfft
 # github.com/robfig/cron/v3 v3.0.1
@@ -574,6 +620,57 @@ github.com/russross/blackfriday/v2
 # github.com/satori/go.uuid v1.2.0
 ## explicit
 github.com/satori/go.uuid
+# github.com/segmentio/kafka-go v0.4.47
+## explicit; go 1.15
+github.com/segmentio/kafka-go
+github.com/segmentio/kafka-go/compress
+github.com/segmentio/kafka-go/compress/gzip
+github.com/segmentio/kafka-go/compress/lz4
+github.com/segmentio/kafka-go/compress/snappy
+github.com/segmentio/kafka-go/compress/zstd
+github.com/segmentio/kafka-go/protocol
+github.com/segmentio/kafka-go/protocol/addoffsetstotxn
+github.com/segmentio/kafka-go/protocol/addpartitionstotxn
+github.com/segmentio/kafka-go/protocol/alterclientquotas
+github.com/segmentio/kafka-go/protocol/alterconfigs
+github.com/segmentio/kafka-go/protocol/alterpartitionreassignments
+github.com/segmentio/kafka-go/protocol/alteruserscramcredentials
+github.com/segmentio/kafka-go/protocol/apiversions
+github.com/segmentio/kafka-go/protocol/consumer
+github.com/segmentio/kafka-go/protocol/createacls
+github.com/segmentio/kafka-go/protocol/createpartitions
+github.com/segmentio/kafka-go/protocol/createtopics
+github.com/segmentio/kafka-go/protocol/deleteacls
+github.com/segmentio/kafka-go/protocol/deletegroups
+github.com/segmentio/kafka-go/protocol/deletetopics
+github.com/segmentio/kafka-go/protocol/describeacls
+github.com/segmentio/kafka-go/protocol/describeclientquotas
+github.com/segmentio/kafka-go/protocol/describeconfigs
+github.com/segmentio/kafka-go/protocol/describegroups
+github.com/segmentio/kafka-go/protocol/describeuserscramcredentials
+github.com/segmentio/kafka-go/protocol/electleaders
+github.com/segmentio/kafka-go/protocol/endtxn
+github.com/segmentio/kafka-go/protocol/fetch
+github.com/segmentio/kafka-go/protocol/findcoordinator
+github.com/segmentio/kafka-go/protocol/heartbeat
+github.com/segmentio/kafka-go/protocol/incrementalalterconfigs
+github.com/segmentio/kafka-go/protocol/initproducerid
+github.com/segmentio/kafka-go/protocol/joingroup
+github.com/segmentio/kafka-go/protocol/leavegroup
+github.com/segmentio/kafka-go/protocol/listgroups
+github.com/segmentio/kafka-go/protocol/listoffsets
+github.com/segmentio/kafka-go/protocol/listpartitionreassignments
+github.com/segmentio/kafka-go/protocol/metadata
+github.com/segmentio/kafka-go/protocol/offsetcommit
+github.com/segmentio/kafka-go/protocol/offsetdelete
+github.com/segmentio/kafka-go/protocol/offsetfetch
+github.com/segmentio/kafka-go/protocol/produce
+github.com/segmentio/kafka-go/protocol/rawproduce
+github.com/segmentio/kafka-go/protocol/saslauthenticate
+github.com/segmentio/kafka-go/protocol/saslhandshake
+github.com/segmentio/kafka-go/protocol/syncgroup
+github.com/segmentio/kafka-go/protocol/txnoffsetcommit
+github.com/segmentio/kafka-go/sasl
 # github.com/sergi/go-diff v1.1.0
 ## explicit; go 1.12
 github.com/sergi/go-diff/diffmatchpatch
@@ -611,8 +708,8 @@ github.com/spf13/cobra
 # github.com/spf13/pflag v1.0.5
 ## explicit; go 1.12
 github.com/spf13/pflag
-# github.com/stretchr/testify v1.7.1
-## explicit; go 1.13
+# github.com/stretchr/testify v1.8.4
+## explicit; go 1.20
 github.com/stretchr/testify/assert
 # github.com/swaggo/echo-swagger v1.0.0
 ## explicit; go 1.13
@@ -654,21 +751,22 @@ github.com/xanzy/ssh-agent
 # github.com/xrash/smetrics v0.0.0-20201216005158-039620a65673
 ## explicit
 github.com/xrash/smetrics
-# go.uber.org/atomic v1.7.0
-## explicit; go 1.13
+# go.uber.org/atomic v1.11.0
+## explicit; go 1.18
 go.uber.org/atomic
-# go.uber.org/multierr v1.6.0
-## explicit; go 1.12
+# go.uber.org/multierr v1.11.0
+## explicit; go 1.19
 go.uber.org/multierr
-# go.uber.org/zap v1.17.0
-## explicit; go 1.13
+# go.uber.org/zap v1.24.0
+## explicit; go 1.19
 go.uber.org/zap
 go.uber.org/zap/buffer
+go.uber.org/zap/internal
 go.uber.org/zap/internal/bufferpool
 go.uber.org/zap/internal/color
 go.uber.org/zap/internal/exit
 go.uber.org/zap/zapcore
-# golang.org/x/crypto v0.13.0
+# golang.org/x/crypto v0.14.0
 ## explicit; go 1.17
 golang.org/x/crypto/acme
 golang.org/x/crypto/acme/autocert
@@ -679,7 +777,6 @@ golang.org/x/crypto/cast5
 golang.org/x/crypto/chacha20
 golang.org/x/crypto/curve25519
 golang.org/x/crypto/curve25519/internal/field
-golang.org/x/crypto/ed25519
 golang.org/x/crypto/hkdf
 golang.org/x/crypto/internal/alias
 golang.org/x/crypto/internal/poly1305
@@ -690,7 +787,7 @@ golang.org/x/crypto/ssh
 golang.org/x/crypto/ssh/agent
 golang.org/x/crypto/ssh/internal/bcrypt_pbkdf
 golang.org/x/crypto/ssh/knownhosts
-# golang.org/x/exp v0.0.0-20230515195305-f3d0a9c9a5cc
+# golang.org/x/exp v0.0.0-20230519143937-03e91628a987
 ## explicit; go 1.20
 golang.org/x/exp/constraints
 golang.org/x/exp/slices
@@ -699,7 +796,7 @@ golang.org/x/exp/slices
 golang.org/x/mod/internal/lazyregexp
 golang.org/x/mod/module
 golang.org/x/mod/semver
-# golang.org/x/net v0.15.0
+# golang.org/x/net v0.17.0
 ## explicit; go 1.17
 golang.org/x/net/context
 golang.org/x/net/http/httpguts
@@ -713,11 +810,10 @@ golang.org/x/net/proxy
 golang.org/x/net/trace
 golang.org/x/net/webdav
 golang.org/x/net/webdav/internal/xml
-# golang.org/x/sys v0.12.0
+# golang.org/x/sys v0.13.0
 ## explicit; go 1.17
 golang.org/x/sys/cpu
 golang.org/x/sys/execabs
-golang.org/x/sys/internal/unsafeheader
 golang.org/x/sys/unix
 golang.org/x/sys/windows
 # golang.org/x/text v0.13.0
@@ -775,10 +871,10 @@ golang.org/x/tools/internal/pkgbits
 golang.org/x/tools/internal/tokeninternal
 golang.org/x/tools/internal/typeparams
 golang.org/x/tools/internal/typesinternal
-# google.golang.org/genproto v0.0.0-20210701191553-46259e63a0a9
-## explicit; go 1.11
+# google.golang.org/genproto v0.0.0-20220503193339-ba3ae3f07e29
+## explicit; go 1.15
 google.golang.org/genproto/googleapis/rpc/status
-# google.golang.org/grpc v1.39.0 => google.golang.org/grpc v1.29.0
+# google.golang.org/grpc v1.46.0 => google.golang.org/grpc v1.29.0
 ## explicit; go 1.11
 google.golang.org/grpc
 google.golang.org/grpc/attributes
@@ -871,8 +967,8 @@ gopkg.in/gomail.v2
 # gopkg.in/ini.v1 v1.62.0
 ## explicit
 gopkg.in/ini.v1
-# gopkg.in/natefinch/lumberjack.v2 v2.0.0
-## explicit
+# gopkg.in/natefinch/lumberjack.v2 v2.2.1
+## explicit; go 1.13
 gopkg.in/natefinch/lumberjack.v2
 # gopkg.in/warnings.v0 v0.1.2
 ## explicit
@@ -899,4 +995,5 @@ vitess.io/vitess/go/vt/vterrors
 vitess.io/vitess/go/vt/vtgate/evalengine
 # github.com/pingcap/log => github.com/pingcap/log v0.0.0-20191012051959-b742a5d432e9
 # github.com/pingcap/parser => github.com/sjjian/parser v0.0.0-20231122073510-03e191068cf1
+# github.com/pingcap/tidb/parser => github.com/raygift/tidb/parser v0.0.0-20231229011222-595725f75a7b
 # google.golang.org/grpc => google.golang.org/grpc v1.29.0
